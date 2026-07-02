@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amazon Ads Authorization Callback</title>
+</head>
+<body>
+  <h1>Amazon Ads Authorization Callback</h1>
+  <p>If authorization succeeded, your authorization code is shown below.</p>
+
+  <h2>Authorization Code</h2>
+  <pre id="code">Loading...</pre>
+
+  <h2>Full Callback URL</h2>
+  <pre id="url"></pre>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("code").textContent = params.get("code") || "No code found.";
+    document.getElementById("url").textContent = window.location.href;
+  </script>
+</body>
+</html>
